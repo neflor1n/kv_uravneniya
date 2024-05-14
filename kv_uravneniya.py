@@ -68,46 +68,65 @@ def tekst1_psse():
 
 
 def Kala():
-    x1 = np.arange(0, 9.5, 0.5) #min max step
+    x1 = np.arange(0, 9.5, 0.5)
     y1=(2/27)*x1*x1-3
-    x2 = np.arange(-10, 0.5, 0.5)#min max step
+    x2 = np.arange(-10, 0.5, 0.5)
     y2=0.04*x2*x2-3
-    x3 =np.arange(-9, -2.5, 0.5) #min max step
-    np.arange(-9, -2.5, 0.5) #min max step
+    x3 =np.arange(-9, -2.5, 0.5)
+    np.arange(-9, -2.5, 0.5)
     y3=(2/9)*(x3+6)**2+1
-    x4 = np.arange(-3, 9.5, 0.5) #min max step
+    x4 = np.arange(-3, 9.5, 0.5)
     y4=(-1/12)*(x4-3)**2+6
-    x5 = np.arange(5, 9, 0.5) #min max step
+    x5 = np.arange(5, 9, 0.5)
     y5=(1/9)*(x5-5)**2+2
-    x6 = np.arange(5, 8.5, 0.5) #min max step
+    x6 = np.arange(5, 8.5, 0.5)
     y6=(1/8)*(x6-7)**2+1.5
-    x7 = np.arange(-13, -8.5, 0.5) #min max step
+    x7 = np.arange(-13, -8.5, 0.5)
     y7=(-0.75)*(x7+11)**2+6
-    x8 = np.arange(-15, -12.5, 0.5) #min max step
+    x8 = np.arange(-15, -12.5, 0.5)
     y8=(-0.5)*(x8+13)**2+3
-    x9= np.arange(-15, -10, 0.5)#min max step
+    x9= np.arange(-15, -10, 0.5)
     y9=[1]*len(x9)
-    #x10 = np.arange(3, 4, 0.5)#min max step
-    #y10=[3]*len(x10)
+    x10 = np.arange(3, 4, 0.5)
+    y10=[3]*len(x10)
     mt.figure()
-    mt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9)
+    mt.plot(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8,x9,y9, x10, y10)
     mt.show()
 
 def prillid():
-    x1 = np.arange(-9,-1)
-    y1 = -1*1/16*(x1 + 5)**2+2
-    x2 = np.arange(1,9)
-    y2 = -1*1/16*(x2 -5)**2+2
-    x3 = np.arange(-9, -1)
-    y3 = 1/4*(x3+5)**2-3
-    x4 = np.arange(1, 9)
+    x1 = np.arange(-9,-1,0.3)
+    y1 = -1/16*(x1 + 5)**2+2
+    x2 = np.arange(1,9,0.3)
+    y2 = -1/16*(x2 -5)**2+2
+    x3 = np.arange(-9, -1,0.3)
+    y3 = 1/4*(x3 + 5)**2-3
+    x4 = np.arange(1, 9,0.3)
     y4 = 1/4*(x4 - 5)**2-3
-    x5 = np.arange(-9,-6)
-    y5 = -1*(x5-5)**2+5
-    x6 = np.arange(6, 9)
-    #y6 =
+    x5 = np.arange(-9,-6,0.3)
+    y5 = -1*(x5 + 7)**2+5
+    x6 = np.arange(6, 9, 0.3)
+    y6 = -1*(x6 - 7)**2 + 5
+    x7 = np.arange(-1, 1, 0.3)
+    y7 = -1*0.5 * x7 ** 2 + 1.5
     mt.figure()
-    mt.plot(x1, y1 )
+    mt.plot(x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6, x7, y7)
+    mt.show()
+
+def umbrella():
+    x1 = np.arange(-12, 12, 0.3)
+    y1 = -1/18 * x1**2 + 12
+    x2 = np.arange(-4, 4, 0.3)
+    y2 = -1/8 * x2**2 +6
+    x3 = np.arange(-12, -4, 0.3)
+    y3 = -1/8*(x3+8)**2 + 6
+    x4 = np.arange(4,12, 0.3)
+    y4 = -1/8*(x4-8)**2 + 6
+    x5 = np.arange(-4, -0.3, 0.3)
+    y5 = 2*(x5+3)**2 - 9
+    x6 = np.arange(-4, 0.2, 0.3)
+    y6 = 1.5*(x6+3)**2 - 10
+    mt.figure()
+    mt.plot(x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6)
     mt.show()
 
 
@@ -135,8 +154,8 @@ def graph():
 def suurenda_ja_vahenda():
     global window_width, window_height
     if window_width == initial_width and window_height == initial_height:
-        window_width += 100
-        window_height += 100
+        window_width += 150
+        window_height += 150
         kala.configure(state='normal')
 
     else:
@@ -255,9 +274,9 @@ suurend = Button(
 )
 
 var = IntVar()
-kala = Radiobutton(aken, text = 'Кит', variable = var, value = 1, font='Calibri 15', command=Kala)
-prill = Radiobutton(aken, text = 'Очки', variable = var, value = 1, font='Calibri 15', command=prillid)
-
+kala = Radiobutton(aken, text = 'Кит', variable = var, value = 1, font='Calibri 15', command= lambda : Kala())
+prill = Radiobutton(aken, text = 'Очки', variable = var, value = 1, font='Calibri 15', command= lambda : prillid())
+umbrellaa = Radiobutton(aken, text = 'Очки', variable = var, value = 1, font='Calibri 15', command= lambda : umbrella())
 
 
 kala.config(state='disabled')
@@ -276,5 +295,6 @@ graffik.place(x=470, y=118)
 suurend.place(x=200, y =270)
 kala.place(x=200, y =350)
 prill.place(x=200, y =390)
+umbrellaa.place(x = 200, y = 430)
 
 aken.mainloop()
